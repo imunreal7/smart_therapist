@@ -1,0 +1,175 @@
+<head>
+	{% load static %}
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Favicon-->
+	<link rel="shortcut icon" href="{% static 'main/img/fav.png'%}">
+	<!-- Author Meta -->
+	<meta name="author" content="colorlib">
+	<!-- Meta Description -->
+	<meta name="description" content="">
+	<!-- Meta Keyword -->
+	<meta name="keywords" content="">
+	<!-- meta character set -->
+	<meta charset="UTF-8">
+	<!-- Site Title -->
+	<title>Smart Therapist</title>
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700,900" rel="stylesheet">
+	    
+
+   
+            
+
+	
+	<link href="{% static 'main/css/linearicons.css' %}" rel=stylesheet>
+	<link href="{% static 'main/css/font-awesome.min.css' %}" rel=stylesheet>
+	<link href="{% static 'main/css/bootstrap.css' %}" rel=stylesheet>
+	<link href="{% static 'main/css/magnific-popup.css' %}" rel=stylesheet>
+	<link href="{% static 'main/css/nice-select.css' %}" rel=stylesheet>
+	<link href="{% static 'main/css/animate.min.css' %}" rel=stylesheet>
+	<link href="{% static 'main/css/owl.carousel.css' %}" rel=stylesheet>
+	<link href="{% static 'main/css/main.css' %}" rel=stylesheet>
+
+</head>
+<body>
+
+	
+
+
+	<!-- Start Header Area -->
+	<header id="header">
+		<div class="container main-menu">
+			<div class="row align-items-center d-flex">
+				<div id="logo">
+			<a href="{% url 'main:base' %}"><img src="{% static 'main/img/logo.png' %}" alt="" title="" /></a>
+				</div>
+				<nav id="nav-menu-container">
+					<ul class="nav-menu">
+						<li class=""><a class="active" href="">Home</a></li>
+						<li><a  href="{% url 'main:about' %}">About</a></li>
+
+
+					{% if user.is_authenticated %}
+					<li><a  href="/profile">{{user.username}}'s Profile</a></li>
+						<li class="menu-has-children"><a href="/{{user.username}}/records">Records</a>
+							<ul>
+								<li><a href="/week.html">Last week</a></li>
+								<li><a href="/month.html">Last Month</a></li>
+							</ul>
+						</li>
+						<li><a href="{% url 'main:logout' %}">Log Out</a></li>
+					{% else %}	
+						<li><a href="{% url 'main:register' %}">Sign Up</a></li>
+					{% endif %}
+
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<!-- End Header Area -->
+	
+
+   
+<section class="home-banner-area">
+		<div class="container">
+			<div class="row fullscreen d-flex align-items-center">
+				<div class="banner-content col-lg-6 col-md-12 justify-content-center ">
+
+
+					
+					<br>
+		
+
+
+<br>
+<br>
+<br>
+<br>
+
+					<h1 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.7s">Smart Therapist</h1>
+					<div class="designation mb-50 wow fadeInUp" data-wow-duration="1s" data-wow-delay="2.1s">
+						Smart way to
+						
+						Live Healthy
+						
+					</div>
+					<a href="/login" class="primary-btn" data-text="Get Started">
+						<span>R</span>
+						<span>E</span>
+						<span>A</span>
+						<span>D</span>
+						<span>Y</span>
+										</a>
+				</div>
+
+				<div class="banner-img col-lg-6 col-md-6 align-self-end">
+					<br>
+					<br>
+					<br>
+
+					<img class="img-fluid" src="{% static 'D:\project\minor\smartTherapist\main\static\main\img\banner-img3.png' %}" alt="">
+				</div>
+
+			<script type="text/javascript">
+		$(document).ready(function(){
+    $('.messages').delay(5000).fadeOut();
+});
+	</script>
+				
+
+	{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+				
+			</div>
+		</div>
+	</section>
+	<!-- End banner Area -->
+
+
+      	
+<div class="container">
+	<br>
+{% block content %}
+{% endblock %}
+</div>
+
+<!-- ####################### Start Scroll to Top Area ####################### -->
+	<div id="back-top">
+		<a title="Go to Top" href="#">
+			<i class="lnr lnr-arrow-up"></i>
+		</a>
+	</div>
+	<!-- ####################### End Scroll to Top Area ####################### -->
+
+
+
+</body>
+<script src="{% static 'main/js/vendor/jquery-2.2.4.min.js'}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	 crossorigin="anonymous"></script>
+	 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+	 <script src="{% static 'main/js/vendor/bootstrap.min.js' %}"></script>
+
+	  <script src="{% static 'main/js/easing.min.js' %}"></script>
+	  <script src="{% static 'main/js/vendor/bootstrap.min.js' %}"></script>
+	  <script src="{% static 'main/js/hoverIntent.js' %}"></script>
+	  <script src="{% static 'main/js/superfish.min.js' %}"></script>
+	  <script src="{% static 'main/js/mn-accordion.js' %}"></script>
+	  <script src="{% static 'main/js/jquery.ajaxchimp.min.js' %}"></script>
+      <script src="{% static 'main/js/jquery.magnific-popup.min.js' %}"></script>
+      <script src="{% static 'main/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'main/js/jquery.nice-select.min.js' %}"></script>
+<script src="{% static 'main/js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'main/js/jquery.circlechart.js' %}"></script>
+<script src="{% static 'main/js/mail-script.js' %}"></script>
+
+<script src="{% static 'main/js/wow.min.js' %}"></script>
+<script src="{% static 'main/js/main.js' %}"></script>
+ 
