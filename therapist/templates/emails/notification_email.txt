@@ -1,0 +1,12 @@
+Subject: Concern about {{ user.first_name }} {{ user.last_name }}'s emotional well-being
+
+Dear Parent/Guardian/Doctor,
+
+We are writing to inform you about a potential concern regarding {{ user.first_name }} {{ user.last_name }}'s emotional state. Our system has detected negative emotions in their last 3 consecutive inputs.
+
+We recommend reaching out to them to provide support and ensure their well-being.
+
+Thank you for your attention to this matter.
+
+Best regards,
+The Smart Therapist Team

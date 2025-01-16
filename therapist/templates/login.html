@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block title %}Login - Smart Therapist{% endblock %} {% block content %}
+<div class="max-w-lg mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+    <div class="p-8">
+        <h2 class="text-2xl font-semibold text-blue-600 mb-6">Login</h2>
+        <form method="post" class="space-y-6">
+            {% csrf_token %} {{ form.as_p }}
+            <button
+                type="submit"
+                class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg shadow-md transform transition hover:scale-105"
+            >
+                Login
+            </button>
+        </form>
+        <p class="mt-6 text-center">
+            Don't have an account?
+            <a
+                href="{% url 'therapy:register' %}"
+                class="text-blue-600 hover:text-blue-800 font-semibold"
+            >
+                Register here
+            </a>
+        </p>
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,34 @@
+{% extends 'base.html' %} {% block title %}Profile - Smart Therapist{% endblock %}
+<!-- block content -->
+{% block content %}
+<div
+    class="max-w-lg mx-auto bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl shadow-md overflow-hidden"
+>
+    <div class="p-8">
+        <h2 class="text-2xl font-semibold text-blue-600 mb-6">Your Profile</h2>
+        <form method="post" class="space-y-6">
+            {% csrf_token %} {% for field in form %}
+            <div>
+                <label
+                    for="{{ field.id_for_label }}"
+                    class="block text-sm font-medium text-gray-700"
+                >
+                    {{ field.label }}
+                </label>
+                <div class="mt-1">{{ field }}</div>
+                {% if field.errors %}
+                <p class="text-sm text-red-600 mt-1">{{ field.errors|join:", " }}</p>
+                {% endif %}
+            </div>
+            {% endfor %}
+            <button
+                type="submit"
+                class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg shadow-md transform transition hover:scale-105"
+            >
+                Update Profile
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
