@@ -27,7 +27,7 @@ def daily_input(request):
             daily_input.user = request.user
 
             # Perform emotion analysis
-            emotion_analyzer = pipeline("text-classification", model="j-hartmann/emotion-english-distilroberta-base")
+            emotion_analyzer = pipeline("text-classification", model="distilbert-base-uncased-finetuned-sst-2-english")
             emotions = emotion_analyzer(daily_input.text)
             emotion_label = emotions[0]['label']  # Most likely emotion
 
